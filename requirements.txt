@@ -1,0 +1,7 @@
+Flask
+pickle
+Pillow
+pandas
+numpy
+gunicorn
+scikit-learn

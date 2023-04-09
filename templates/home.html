@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Bike Pricing Optimizer</title>
+</head>
+<body>
+    <h1>Custom Bike Pricing Optimizer</h1>
+    <form method="POST" action="/predict">
+        <label>Name:</label>
+        <input type="text" name="name"><br><br>
+        <label>Brand:</label>
+        <input type="text" name="brand"><br><br>
+        <label>Max Power:</label>
+        <input type="number" name="max_power"><br><br>
+        <label>Max Torque:</label>
+        <input type="number" name="max_torque"><br><br>
+        <label>Fuel Tank Capacity:</label>
+        <input type="number" name="fuel_tank_capacity"><br><br>
+        <label>Top Speed:</label>
+        <input type="number" name="top_speed"><br><br>
+        <label>Front Brake Type:</label>
+        <input type="text" name="front_brake_type"><br><br>
+        <label>Kerb Weight:</label>
+        <input type="number" name="kerb_weight"><br><br>
+        <label>Overall Length:</label>
+        <input type="number" name="overall_length"><br><br>
+        <label>Overall Width:</label>
+        <input type="number" name="overall_width"><br><br>
+        <label>Wheelbase:</label>
+        <input type="number" name="wheelbase"><br><br>
+        <label>Overall Height:</label>
+        <input type="number" name="overall_height"><br><br>
+        <input type="submit" value="Predict Price">
+    </form>
+</body>
+</html>
