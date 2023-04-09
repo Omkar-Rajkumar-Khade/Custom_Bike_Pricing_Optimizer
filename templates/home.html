@@ -7,10 +7,177 @@
 <body>
     <h1>Custom Bike Pricing Optimizer</h1>
     <form method="POST" action="/predict">
-        <label>Name:</label>
-        <input type="text" name="name"><br><br>
-        <label>Brand:</label>
-        <input type="text" name="brand"><br><br>
+        <div class="form-group-Brand">
+				<label for="brand">Brand:</label>
+				<select class="form-control" id="brand" name="brand" required>
+					<option value="Royal Enfield">Royal Enfield</option>
+					<option value="TVS">TVS</option>
+					<option value="Hero">Hero</option>
+					<option value="Bajaj">Bajaj</option>
+					<option value="Honda">Honda</option>
+					<option value="Yamaha">Yamaha</option>
+					<option value="Suzuki">Suzuki</option>
+					<option value="KTM">KTM</option>
+					<option value="Jawa">Jawa</option>
+					<option value="Kawasaki">Kawasaki</option>
+					<option value="Aprilia">Aprilia</option>
+					<option value="Benelli">Benelli</option>
+					<option value="CFMoto">CFMoto</option>
+					<option value="Ducati">Ducati</option>
+					<option value="Husqvarna">Husqvarna</option>
+					<option value="Triumph">Triumph</option>
+					<option value="Vespa">Vespa</option>
+				</select>
+			</div><br>
+
+            <div class="form-group-name"></div>
+            <label for="name">Select Motorcycle Model:</label>
+            <select name="name" id="name">
+                <option value="Royal Enfield Hunter 350">Royal Enfield Hunter 350</option>
+                <option value="Royal Enfield Classic 350">Royal Enfield Classic 350</option>
+                <option value="Royal Enfield Bullet 350">Royal Enfield Bullet 350</option>
+                <option value="Royal Enfield Continental GT 650">Royal Enfield Continental GT 650</option>
+                <option value="Royal Enfield Meteor 350">Royal Enfield Meteor 350</option>
+                <option value="Royal Enfield Himalayan">Royal Enfield Himalayan</option>
+                <option value="Royal Enfield Interceptor 650">Royal Enfield Interceptor 650</option>
+                <option value="Royal Enfield Scram 411">Royal Enfield Scram 411</option>
+                <option value="TVS Raider 125">TVS Raider 125</option>
+                <option value="Apache">Apache</option>
+                <option value="TVS Ronin">TVS Ronin</option>
+                <option value="TVS Ntorq 125">TVS Ntorq 125</option>
+                <option value="TVS Sport">TVS Sport</option>
+                <option value="TVS Jupiter">TVS Jupiter</option>
+                <option value="TVS Jupiter 125">TVS Jupiter 125</option>
+                <option value="TVS Star City Plus">TVS Star City Plus</option>
+                <option value="TVS Radeon">TVS Radeon</option>
+                <option value="TVS Scooty Pep Plus">TVS Scooty Pep Plus</option>
+                <option value="TVS XL100 Heavy Duty">TVS XL100 Heavy Duty</option>
+                <option value="TVS Scooty Zest 110">TVS Scooty Zest 110</option>
+                <option value="TVS XL100 Comfort">TVS XL100 Comfort</option>
+                <option value="Splendor">Splendor</option>
+                <option value="Hero Splendor Plus Xtec">Hero Splendor Plus Xtec</option>
+                <option value="Hero HF Deluxe">Hero HF Deluxe</option>
+                <option value="Hero Xtreme 160R">Hero Xtreme 160R</option>
+                <option value="Hero Glamour">Hero Glamour</option>
+                <option value="Hero Passion Pro">Hero Passion Pro</option>
+                <option value="Hero Xpulse 200 4V">Hero Xpulse 200 4V</option>
+                <option value="Hero Pleasure +">Hero Pleasure +</option>
+                <option value="Hero Passion Xtec">Hero Passion Xtec</option>
+                <option value="Hero Glamour Xtec">Hero Glamour Xtec</option>
+                <option value="Hero Xpulse 200T 4V">Hero Xpulse 200T 4V</option>
+                <option value="Hero Xtreme 200S">Hero Xtreme 200S</option>
+                <option value="Hero Pleasure + Xtec">Hero Pleasure + Xtec</option>
+                <option value="Hero Maestro Edge 125">Hero Maestro Edge 125</option>
+                <option value="Hero Destini 125 Xtec">Hero Destini 125 Xtec</option>
+                <option value="Hero Maestro Edge 110">Hero Maestro Edge 110</option>
+                <option value="Pulsar">Pulsar</option>
+                <option value="Platina">Platina</option>
+                <option value="Bajaj Dominar 400">Bajaj Dominar 400</option>
+                <option value="Bajaj Dominar 250">Bajaj Dominar 250</option>
+                <option value="Bajaj CT 110">Bajaj CT 110</option>
+                <option value="Bajaj CT 125X">Bajaj CT 125X</option>
+                <option value="Avenger">Avenger</option>
+                <option value="Honda SP 125">Honda SP 125</option>
+                <option value="Activa">Activa</option>
+                <option value="Honda Shine">Honda Shine</option>
+                <option value="Honda Unicorn">Honda Unicorn</option>
+                <option value="Honda Dio">Honda Dio</option>
+                <option value="Honda Hornet 2.0">Honda Hornet 2.0</option>
+                <option value="Honda Hness CB350">Honda Hness CB350</option>
+                <option value="Honda Livo">Honda Livo</option>
+                <option value="Honda X-Blade">Honda X-Blade</option>
+                <option value="Honda CB300F">Honda CB300F</option>
+                <option value="Honda CB350RS">Honda CB350RS</option>
+                <option value="Honda CB300R">Honda CB300R</option>
+                <option value="Honda CD 110 Dream">Honda CD 110 Dream</option>
+                <option value="CBR">CBR</option>
+                <option value="Honda CB200X">Honda CB200X</option>
+                <option value="Honda Grazia">Honda Grazia</option>
+                <option value="Honda Goldwing">Honda Goldwing</option>
+                <option value="Honda Africa Twin">Honda Africa Twin</option>
+                <option value="Honda CB650R">Honda CB650R</option>
+                <option value="Yamaha MT 15 V2">Yamaha MT 15 V2</option>
+                <option value="Yamaha R15 V4">Yamaha R15 V4</option>
+                <option value="Yamaha FZ S FI">Yamaha FZ S FI</option>
+                <option value="Yamaha FZ FI">Yamaha FZ FI</option>
+                <option value="Yamaha R15S">Yamaha R15S</option>
+                <option value="Yamaha FZ X">Yamaha FZ X</option>
+                <option value="Yamaha FZ25">Yamaha FZ25</option>
+                <option value="Yamaha Ray ZR 125">Yamaha Ray ZR 125</option>
+                <option value="Yamaha Fascino 125">Yamaha Fascino 125</option>
+                <option value="Yamaha Aerox 155">Yamaha Aerox 155</option>
+                <option value="Suzuki Access 125">Suzuki Access 125</option>
+                <option value="Suzuki Gixxer SF">Suzuki Gixxer SF</option>
+                <option value="Suzuki Burgman Street 125">Suzuki Burgman Street 125</option>
+                <option value="Suzuki Gixxer">Suzuki Gixxer</option>
+                <option value="Suzuki Gixxer SF 250">Suzuki Gixxer SF 250</option>
+                <option value="Suzuki Gixxer 250">Suzuki Gixxer 250</option>
+                <option value="Suzuki Katana">Suzuki Katana</option>
+                <option value="Suzuki V-Strom 650 XT">Suzuki V-Strom 650 XT</option>
+                <option value="Duke">Duke</option>
+                <option value="KTM 390 Adventure">KTM 390 Adventure</option>
+                <option value="KTM 250 Adventure">KTM 250 Adventure</option>
+                <option value="Jawa 42">Jawa 42</option>
+                <option value="Jawa Standard">Jawa Standard</option>
+                <option value="Ninja">Ninja</option>
+                <option value="Kawasaki Z900">Kawasaki Z900</option>
+                <option value="Kawasaki Ninja 650">Kawasaki Ninja 650</option>
+                <option value="Kawasaki Z650">Kawasaki Z650</option>
+                <option value="Kawasaki Vulcan S">Kawasaki Vulcan S</option>
+                <option value="Kawasaki Z H2">Kawasaki Z H2</option>
+                <option value="Kawasaki Z650RS">Kawasaki Z650RS</option>
+                <option value="Kawasaki Versys 650">Kawasaki Versys 650</option>
+                <option value="Kawasaki W800">Kawasaki W800</option>
+                <option value="Kawasaki Versys 1000">Kawasaki Versys 1000</option>
+                <option value="SR">SR</option>
+                <option value="Aprilia Storm 125">Aprilia Storm 125</option>
+                <option value="Aprilia SXR 160">Aprilia SXR 160</option>
+                <option value="Aprilia SXR 125">Aprilia SXR 125</option>
+                <option value="Aprilia RSV4 1100 Factory">Aprilia RSV4 1100 Factory</option>
+                <option value="Aprilia Tuono Factory">Aprilia Tuono Factory</option>
+                <option value="Benelli Imperiale 400">Benelli Imperiale 400</option>
+                <option value="Benelli TRK 251">Benelli TRK 251</option>
+                <option value="Benelli 502C">Benelli 502C</option>
+                <option value="Benelli TRK 502X">Benelli TRK 502X</option>
+                <option value="Benelli TRK 502">Benelli TRK 502</option>
+                <option value="Benelli Leoncino 500">Benelli Leoncino 500</option>
+                <option value="CFMoto 300NK">CFMoto 300NK</option>
+                <option value="CFMoto 650NK">CFMoto 650NK</option>
+                <option value="CFMoto 650GT">CFMoto 650GT</option>
+                <option value="CFMoto 650MT">CFMoto 650MT</option>
+                <option value="Ducati Panigale V4">Ducati Panigale V4</option>
+                <option value="Ducati SuperSport">Ducati SuperSport</option>
+                <option value="Ducati Monster BS6">Ducati Monster BS6</option>
+                <option value="Scrambler">Scrambler</option>
+                <option value="Ducati Streetfighter V4">Ducati Streetfighter V4</option>
+                <option value="Ducati Panigale V2">Ducati Panigale V2</option>
+                <option value="Ducati XDiavel">Ducati XDiavel</option>
+                <option value="Ducati Streetfighter V2">Ducati Streetfighter V2</option>
+                <option value="Ducati Diavel 1260">Ducati Diavel 1260</option>
+                <option value="Ducati Hypermotard 950">Ducati Hypermotard 950</option>
+                <option value="Ducati Multistrada V4">Ducati Multistrada V4</option>
+                <option value="Ducati Multistrada V2">Ducati Multistrada V2</option>
+                <option value="Ducati Scrambler Desert Sled">Ducati Scrambler Desert Sled</option>
+                <option value="Husqvarna Svartpilen 250">Husqvarna Svartpilen 250</option>
+                <option value="Husqvarna Vitpilen 250">Husqvarna Vitpilen 250</option>
+                <option value="Triumph Rocket 3">Triumph Rocket 3</option>
+                <option value="Triumph Trident 660">Triumph Trident 660</option>
+                <option value="Triumph Speed Triple 1200 RS">Triumph Speed Triple 1200 RS</option>
+                <option value="Triumph Tiger 900">Triumph Tiger 900</option>
+                <option value="Bonneville">Bonneville</option>
+                <option value="Triumph Speed Twin 900">Triumph Speed Twin 900</option>
+                <option value="Triumph Scrambler 900">Triumph Scrambler 900</option>
+                <option value="Triumph Speed Twin">Triumph Speed Twin</option>
+                <option value="Triumph Bonneville T100">Triumph Bonneville T100</option>
+                <option value="Triumph Tiger 850 Sport">Triumph Tiger 850 Sport</option>
+                <option value="Vespa ZX 125">Vespa ZX 125</option>
+                <option value="Vespa SXL 125">Vespa SXL 125</option>
+                <option value="Vespa SXL 150">Vespa SXL 150</option>
+                <option value="Vespa VXL 125">Vespa VXL 125</option>
+                <option value="Vespa VXL 150">Vespa VXL 150</option>
+                <option value="Vespa Elegante 150">Vespa Elegante 150</option>
+            </select>
+                </div><br><br>
         <label>Max Power:</label>
         <input type="number" name="max_power"><br><br>
         <label>Max Torque:</label>
