@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta
+      name="description"
+      content="This software aims to provide a machine learning solution for predicting the price of custom-built motorcycles based on their various features such as bike name, brand, max power, max torque, fuel tank capacity, top speed, front brake type, kerb weight, overall length, overall width, wheelbase, and overall height. "
+    />
     <title>Custom Bike Pricing Optimizer</title>
     <style>
         form {
@@ -25,6 +29,14 @@
             display: block;
             margin-bottom: 1px;
         }
+        select {
+        font-size: 16px;
+        padding: 6px 8px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 4px;
+}
         
         input[type=text],
         input[type=number] {
@@ -118,7 +130,7 @@
 
             <div class="form-group-name"></div>
             <label for="name">Select Motorcycle Model:</label>
-            <select name="name" id="name">
+            <select name="name" id="name" required>
                 <option value="Royal Enfield Hunter 350">Royal Enfield Hunter 350</option>
                 <option value="Royal Enfield Classic 350">Royal Enfield Classic 350</option>
                 <option value="Royal Enfield Bullet 350">Royal Enfield Bullet 350</option>
@@ -264,26 +276,29 @@
                 <option value="Vespa Elegante 150">Vespa Elegante 150</option>
             </select>
                 </div><br><br>
-        <label>Max Power:</label>
-        <input type="number" name="max_power"><br><br>
-        <label>Max Torque:</label>
-        <input type="number" name="max_torque"><br><br>
-        <label>Fuel Tank Capacity:</label>
-        <input type="number" name="fuel_tank_capacity"><br><br>
-        <label>Top Speed:</label>
-        <input type="number" name="top_speed"><br><br>
-        <label>Front Brake Type:</label>
-        <input type="text" name="front_brake_type"><br><br>
-        <label>Kerb Weight:</label>
-        <input type="number" name="kerb_weight"><br><br>
-        <label>Overall Length:</label>
-        <input type="number" name="overall_length"><br><br>
-        <label>Overall Width:</label>
-        <input type="number" name="overall_width"><br><br>
-        <label>Wheelbase:</label>
-        <input type="number" name="wheelbase"><br><br>
-        <label>Overall Height:</label>
-        <input type="number" name="overall_height"><br><br>
+        <label>Max Power (PS):</label>
+        <input type="number" name="max_power" required><br><br>
+        <label>Max Torque (Nm):</label>
+        <input type="number" name="max_torque" required><br><br>
+        <label>Fuel Tank Capacity (Ltr):</label>
+        <input type="number" name="fuel_tank_capacity" required><br><br>
+        <label>Top Speed (kmph):</label>
+        <input type="number" name="top_speed" required><br><br>
+        <label for="front_brake_type">Front Brake Type:</label>
+            <select name="front_brake_type" id="front_brake_type" required>
+                <option value="drum">Drum</option>
+                <option value="disc">Disc</option>
+            </select><br>
+        <label>Kerb Weight (kg):</label>
+        <input type="number" name="kerb_weight" required><br><br>
+        <label>Overall Length (mm):</label>
+        <input type="number" name="overall_length" required><br><br>
+        <label>Overall Width (mm):</label>
+        <input type="number" name="overall_width" required><br><br>
+        <label>Wheelbase (mm):</label>
+        <input type="number" name="wheelbase" required><br><br>
+        <label>Overall Height (mm):</label>
+        <input type="number" name="overall_height"required><br><br>
         <input type="submit" value="Predict Price">
     </form>
 </body>
