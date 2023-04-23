@@ -97,7 +97,15 @@ After training and testing the four regression models, we found the following re
 | Adaptive Boosting Regressor (ABR) |0.93 | 0.74|
 | Elastic Net Regressor (ENR) |0.74 |0.71 |
 
-It demonstrates its accuracy in predicting price of bike on custom parameters.
+Based on the results you provided, the Random Forest Regressor (RFR) seems to be the best-performing algorithm for this particular problem. It has an R-squared score of 0.88, which indicates that the model explains 88% of the variability in the target variable. Moreover, the mean R-squared cross-validation score of 0.82 suggests that the model has good generalization performance.
+
+However, it is worth noting that the Decision Tree Regressor (DTR) has the highest R-squared score of 0.95, which is a strong indication that the model fits the training data very well. However, its mean R-squared cross-validation score of 0.69 indicates that it might overfit to the training data, which could lead to poor performance on new data.
+
+The AdaBoost Regressor (ABR) also has a high R-squared score of 0.93, but its mean R-squared cross-validation score of 0.74 is lower than that of the RFR, indicating that the model might not generalize as well to new data.
+
+The ElasticNet Regressor (ENR) has the lowest R-squared score of 0.75 and a mean R-squared cross-validation score of 0.71, indicating that it might not be the best choice for this problem.
+
+Overall, based on the results you provided, the Random Forest Regressor (RFR) seems to be the best choice for this problem, as it has a good balance between R-squared score and mean R-squared cross-validation score, indicating good performance on both the training and testing data.
 
 ## Model Integration
 In addition to the machine learning model, this project also includes a Flask app that allows users to interact with the model by providing custom input parameters and getting a price prediction in response. The Flask app is integrated with the machine learning model through the use of the pickle library, which loads the trained model from a saved file.
