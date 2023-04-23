@@ -55,11 +55,49 @@ To run the project, you must have the following installed on your system:
 You can install the required packages using the following command:
 ``` pip install -r requirements.txt ```
 
-## Preprocessing
-To preprocess the data, we use a `ColumnTransformer` object that applies one-hot encoding to categorical features and passes numerical features through as-is. The resulting transformed data is fed into a `RandomForestRegressor` model that is trained to predict the price of the motorcycle.
+## Machine Learning Model Training
+
+To predict the price of a bike, we trained four different regression models:
+
+* Random Forest Regressor (RFR)
+* Decision Tree Regressor (DTR)
+* Adaptive Boosting Regressor (ABR)
+* Elastic Net Regressor (ENR)
+
+The transformers used in the pipeline are:
+
+* `ColumnTransformer`: Used to apply different transformers to different columns of the data.
+* `StandardScaler`: Used to standardize the numerical data.
+* `OneHotEncoder`: Used to encode categorical data.
+
+The first step in the process was to preprocess the data using ColumnTransformer to one-hot encode the categorical features and scale the numerical features. We used `StandardScaler()` to standardize the numerical data, and `OneHotEncoder(sparse=False, handle_unknown='ignore')` to one-hot encode the categorical data.
+
+We created two different `ColumnTransformer()` instances, one for each model type. The first column transformer, `trf1_RFR`, is used to transform the data before training the RFR and ENR models, and the second column transformer, `trf1_DTR`, is used to transform the data before training the DTR and ABR models.
+
+We then created the four regression models using the following algorithms:
+
+* RFR: RandomForestRegressor(n_estimators=200, * criterion='squared_error')
+* DTR: DecisionTreeRegressor(random_state=42)
+* ABR: AdaBoostRegressor()
+* ENR: ElasticNet(alpha=0.1, l1_ratio=0.5)
+
+We created four pipelines, one for each regression model, using the two column transformers created earlier and the corresponding regression model.
+
+We trained each pipeline on the training data, made predictions using the test data, and evaluated each model's performance using R-squared score. We also used cross-validation with 15 folds to get a better understanding of how well each model generalizes to unseen data.
+
+
 
 ## Results
-The model achieved a R2 score of 89% and a cross_val_score(cross validation) of 80%, which demonstrates its accuracy in predicting price of bike on custom parameters.
+After training and testing the four regression models, we found the following results:
+
+| Model           | R-square | Mean R-squared Cross-validation |
+| ----------------- |----------------| ------------------------------------------------------------------ |
+| Random Forest Regressor (RFR) | 0.88| 0.82 |
+| Decision Tree Regressor (DTR) |0.95 | 0.69|
+| Adaptive Boosting Regressor (ABR) |0.93 | 0.74|
+| Elastic Net Regressor (ENR) |0.74 |0.71 |
+
+It demonstrates its accuracy in predicting price of bike on custom parameters.
 
 ## Model Integration
 In addition to the machine learning model, this project also includes a Flask app that allows users to interact with the model by providing custom input parameters and getting a price prediction in response. The Flask app is integrated with the machine learning model through the use of the pickle library, which loads the trained model from a saved file.
