@@ -108,11 +108,17 @@ The ElasticNet Regressor (ENR) has the lowest R-squared score of 0.75 and a mean
 Overall, based on the results you provided, the Random Forest Regressor (RFR) seems to be the best choice for this problem, as it has a good balance between R-squared score and mean R-squared cross-validation score, indicating good performance on both the training and testing data.
 
 ## Model Integration
-In addition to the machine learning model, this project also includes a Flask app that allows users to interact with the model by providing custom input parameters and getting a price prediction in response. The Flask app is integrated with the machine learning model through the use of the pickle library, which loads the trained model from a saved file.
+IThis project includes a Flask app that enables users to interact with the machine learning model by providing custom input parameters and getting a price prediction in response. The Flask app is a web framework that allows the creation of web applications in Python.
 
-The Flask app consists of two HTML templates, home.html and result.html, which provide the user interface for entering input parameters and displaying the predicted price. The home.html template contains a form that allows the user to enter the input parameters, and the result.html template displays the predicted price.
+The Flask app uses the pickle library to load the trained machine learning model from a saved file, so that the app can use it to make predictions. This means that the trained model is integrated with the Flask app and can be accessed through it.
 
-The Flask app is run using the app.run(debug=True) command, which starts the development server and enables debug mode. This allows for easy debugging and testing of the app during development. To use the app, simply navigate to the home page (http://localhost:5000/) and enter the desired input parameters. After submitting the form, the predicted price will be displayed on the results page.
+The Flask app consists of two HTML templates, home.html and result.html, which provide the user interface for entering input parameters and displaying the predicted price. The home.html template contains a form that allows the user to enter the input parameters required to make a price prediction.Once the user has entered the input parameters, they can submit the form to the Flask app.
+
+When the user submits the form, the Flask app takes the input parameters, and the machine learning model uses them to make a price prediction. The predicted price is then displayed on the result.html template. This template is responsible for displaying the predicted price in a user-friendly format, so that the user can easily understand the output.
+
+To run the Flask app, the app.run(debug=True) command is used. This starts the development server and enables debug mode, which is useful for debugging and testing the app during development. Debug mode allows developers to view detailed error messages and other information that can be used to identify and fix issues with the app.
+
+To use the app, simply navigate to the home page (http://localhost:5000/) and enter the desired input parameters. After submitting the form, the predicted price will be displayed on the results page. The app can be run on a local machine or deployed to a server for public use.
 
 ## Deployment
 The project was successfully deployed on Render and can be accessed here:
