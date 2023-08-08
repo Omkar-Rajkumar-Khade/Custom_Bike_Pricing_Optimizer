@@ -4,7 +4,7 @@ import pickle
 app = Flask(__name__)
 
 # load the trained model
-model = pickle.load(open('models/pipe3.pkl','rb'))
+model = pickle.load(open('models/pipe3.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -25,6 +25,10 @@ def predict():
     overall_width = float(request.form['overall_width'])
     wheelbase = float(request.form['wheelbase'])
     overall_height = float(request.form['overall_height'])
+
+    # Check for zero or negative inputs
+    if any(val <= 0 for val in [max_power, max_torque, fuel_tank_capacity, top_speed, kerb_weight, overall_length, overall_width, wheelbase, overall_height]):
+        return render_template('error.html', message="Please enter valid positive values for all parameters.")
 
     # make a prediction using the loaded model
     input_data = [[name, brand, max_power, max_torque, fuel_tank_capacity, top_speed, front_brake_type, kerb_weight, overall_length, overall_width, wheelbase, overall_height]]
